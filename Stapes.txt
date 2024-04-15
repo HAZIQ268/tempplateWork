@@ -1,0 +1,58 @@
+Open Browser
+Theamwagon Download Focus Template
+
+Create Folder = F2 Final PHP
+
+Create Database = bookstoref2
+Create Table = role = 2 Col 1) id 2) Role_Name
+Create Table = Authors = 5 Col 1) id = INT 2) author_name = VAR
+3) dob = DATE 4) location = VAR 5) imagee = VAR
+Create Table = books = 7 col 1) id = INT 2) BookName = VAR 3) Description = VAR
+4) Price INT 5) Catld_FK = INT 6) AuthId_FK = INT 7) BookImage = VAR
+Create Table = Category = Col 3 1) id = INT 2) CategoryName = VAR 
+3) CategoryImage = VAR
+Create Table = users = 1) id = INT 2) username = VAR 
+3) password = VAR 4) RoledId_FK = INT
+
+---------NEXT STEP---------
+
+---------SQL QUERYS---------
+1) alter table Authors add primary key (id);
+1) alter table books add primary key (id);
+1) alter table category add primary key (id);
+1) alter table role add primary key (id);
+1) alter table users add primary key (id);
+
+
+
+---------NEXT STEP---------
+
+---------SQL QUERYS---------
+
+alter table role modify id int (11) not null AUTO_INCREMENT , AUTO_INCREMENT=2;
+alter table category modify id int (11) not null AUTO_INCREMENT;
+alter table users modify id int (11) not null AUTO_INCREMENT;
+alter table authors modify id int (11) not null AUTO_INCREMENT;
+
+---------NEXT STEP---------
+
+Back Users Table And Click Relation View = Create Foreign Key
+RoledId_FK OR role select (users)
+
+---------NEXT STEP---------
+
+go to your database bookstoref2,click on books table And click Relation View = 
+add data
+AuthId_FK OR authors select
+CatId_FK OR  select
+
+
+---------NEXT STEP---------
+click on database bookstoref2 and then export file
+
+
+
+
+
+
+

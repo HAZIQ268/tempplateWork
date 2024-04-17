@@ -1,6 +1,10 @@
 <?php
-    include("header.php");
+
+include("header.php");
+include("connection.php");
+
 ?>
+
 
 <!--**********************************
             Content body start
@@ -24,54 +28,22 @@
                 
                 <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Horizontal Form</h4>
+                                <h4 class="card-title">Role Add</h4>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    <form method="post">
 
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-12">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="1234 Main St">
+                                                <input type="text" class="form-control" name="role_name" placeholder="Enter Your Name">
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Email</label>
-                                                <input type="email" class="form-control" placeholder="Email">
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Password">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>City</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-4">
-                                                <label>State</label>
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Choose...</option>
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-2">
-                                                <label>Zip</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">
-                                                    Check me out
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                            
+                                        
+                                        
+                                        <button type="submit" name="submit" class="btn btn-primary">Add</button>
                                     </form>
                                 </div>
                             </div>
@@ -80,15 +52,24 @@
 
                         </div>
                         </div>
-                       
+                        
 
+                        <?php
 
+                        if(isset($_POST['submit'])){
 
+                            $role_name = $_POST['role_name'];
 
+                            $sql = "insert into role (role_name) values
+                            ('$role_name')";
+                            $result = mysqli_query($conn, $sql);
 
+                            echo "<script>
+                            
+                            alert('Your Role Has Been Added!')
+                            </script>";
+                        }
 
+            include("footer.php")
 
-
-<?php
-    include("footer.php");
-?>
+        ?>

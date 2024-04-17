@@ -3,7 +3,11 @@
 include("header.php");
 include("connection.php");
 
+$sql= "select * from role";
+$result = mysqli_query($conn ,$sql);
+
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!--**********************************
             Content body start
         ***********************************-->
@@ -35,38 +39,26 @@ include("connection.php");
                                     <table class="table table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Status</th>
-                                                <th>Date</th>
-                                                <th>Price</th>
+                                                <th>Id</th>
+                                                <th>Role Name</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th>1</th>
-                                                <td>Kolor Tea Shirt For Man</td>
-                                                <td><span class="badge badge-primary">Sale</span>
-                                                </td>
-                                                <td>January 22</td>
-                                                <td class="color-primary">$21.56</td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td>Kolor Tea Shirt For Women</td>
-                                                <td><span class="badge badge-success">Tax</span>
-                                                </td>
-                                                <td>January 30</td>
-                                                <td class="color-success">$55.32</td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Blue Backpack For Baby</td>
-                                                <td><span class="badge badge-danger">Extended</span>
-                                                </td>
-                                                <td>January 25</td>
-                                                <td class="color-danger">$14.85</td>
-                                            </tr>
+                                             <?php 
+                                                while ($rows = mysqli_fetch_assoc($result)) {
+                                                    
+                                                    ?>
+                                                    <td><?php echo $rows['id']?></td>
+                                                    <td><?php echo $rows['role_name']?></td>
+                                                    <td><a href="role_update.php?id=<?php echo $rows['id']?>" ><i class="bi bi-pencil-square"></i>Edit</a></td>
+                                                    <td><a href="role_delete.php?id=<?php echo $rows['id']?>" ><i class="bi bi-trash3-fill"></i>Delete</a></td>
+                                                </tr>
+                                                <?php } ?>
+                                          
+                                           
                                         </tbody>
                                     </table>
                                 </div>

@@ -42,7 +42,7 @@ $result = mysqli_query($conn,$sql);
                                                 <?php 
                                                 while ($rows = mysqli_fetch_assoc($result)) {
                                                     ?>
-                                                    <input type="text" class="form-control" name="role_name" placeholder="Enter Your Name">
+                                                    <input type="text" class="form-control" name="role_name" value="?php echo $rows['role_name']?>" placeholder="Enter Your Name">
                                                    
                                               <?php } ?>
                                           

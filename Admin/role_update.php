@@ -39,8 +39,12 @@ $result = mysqli_query($conn,$sql);
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" name="role_name" placeholder="Enter Your Name">
-                                              
+                                                <?php 
+                                                while ($rows = mysqli_fetch_assoc($result)) {
+                                                    ?>
+                                                    <input type="text" class="form-control" name="role_name" placeholder="Enter Your Name">
+                                                   
+                                              <?php } ?>
                                           
                         
                                             </div>

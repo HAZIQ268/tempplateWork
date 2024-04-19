@@ -67,6 +67,7 @@ include("connection.php");
                             echo "<script>
                             
                             alert('Your Role Has Been Added!')
+                            window.location.href='role_show.php'
                             </script>";
                         }
 

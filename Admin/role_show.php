@@ -3,12 +3,13 @@
 include("header.php");
 include("connection.php");
 
-$sql= "select * from role";
-$result = mysqli_query($conn ,$sql);
+$sql = "select * from role";
+$result = mysqli_query($conn , $sql);
 
 ?>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!--**********************************
+<!--**********************************
             Content body start
         ***********************************-->
         <div class="content-body">
@@ -27,7 +28,8 @@ $result = mysqli_query($conn ,$sql);
                         </ol>
                     </div>
                 </div>
-                
+                <!-- row -->
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -36,29 +38,33 @@ $result = mysqli_query($conn ,$sql);
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-responsive-sm">
+                                    <table class="table table-responsive-sm text-dark">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Role Name</th>
+                                                <th>ID</th>
+                                                <th>Name</th>
                                                 <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th>Dalete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                             <?php 
-                                                while ($rows = mysqli_fetch_assoc($result)) {
-                                                    
-                                                    ?>
-                                                    <td><?php echo $rows['id']?></td>
-                                                    <td><?php echo $rows['role_name']?></td>
-                                                    <td><a href="role_update.php?id=<?php echo $rows['id']?>" ><i class="bi bi-pencil-square"></i>Edit</a></td>
-                                                    <td><a href="role_delete.php?id=<?php echo $rows['id']?>" ><i class="bi bi-trash3-fill"></i>Delete</a></td>
-                                                </tr>
-                                                <?php } ?>
-                                          
-                                           
+                                                <?php 
+                                                
+                                                while($rows = mysqli_fetch_assoc($result)){
+                                                ?>
+
+                                                    <td><?php echo $rows['id'] ?></td>
+                                                    <td><?php echo $rows['role_name'] ?></td>
+                                                    <td><a href="role_update.php?id=<?php echo $rows
+                                                    ['id']?>"><i class="bi bi-pencil-square"></i>Edit</a></td>
+                                                    <td><a href="role_delete.php?id=<?php echo $rows
+                                                    ['id']?>"><i class="bi bi-trash3-fill"></i>Delete</a></td>
+
+
+                                            </tr>
+                                               <?php } ?>
+                                               
                                         </tbody>
                                     </table>
                                 </div>
@@ -71,10 +77,10 @@ $result = mysqli_query($conn ,$sql);
 
 
 
-                        
 
-                        <?php
 
-            include("footer.php")
+<?php
 
-        ?>
+include("footer.php")
+
+?>

@@ -178,15 +178,15 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Role</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Role Add</a></li>
-                            <li><a href="./index2.html">Role Show</a></li>
+                            <li><a href="role_add.php">Role Add</a></li>
+                            <li><a href="role_show.php">Role Show</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">User</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">User Add</a></li>
-                            <li><a href="./index2.html">User Show</a></li>
+                            <li><a href="user_add.php">User Add</a></li>
+                            <li><a href="user_show.php">User Show</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i

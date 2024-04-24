@@ -5,7 +5,7 @@ include("connection.php");
 
 $Id = $_GET["id"];
 $sql = "select * from users where id= $Id";
-$result = mysqli_query($conn , $sql);
+$result = mysqli_query($conn, $sql);
 
 
 ?>
@@ -33,7 +33,7 @@ $result = mysqli_query($conn , $sql);
 
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Role Add</h4>
+                <h4 class="card-title">User Add</h4>
             </div>
             <div class="card-body">
                 <div class="basic-form">
@@ -41,15 +41,15 @@ $result = mysqli_query($conn , $sql);
 
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label>Role Name</label>
+                                <label>User Name</label>
                                 <?php
-                                
-                                
-                                while ($rows = mysqli_fetch_assoc($result)){
-                                ?>
 
-                                <input type="text" class="form-control" name="username" value="<?php echo $rows['username'] ?>" placeholder="Enter Your Username">
-                           <?php } ?>
+
+                                while ($rows = mysqli_fetch_assoc($result)) {
+                                ?>
+                                    <input type="text" class="form-control" name="username" value="<?php echo $rows['username'] ?>" placeholder="Enter Your Username">
+
+                                <?php } ?>
                             </div>
                         </div>
 
@@ -66,20 +66,20 @@ $result = mysqli_query($conn , $sql);
 </div>
 
 
-    <?php
-        
-        if(isset($_POST['update'])){
-            $username = $_POST['username'];
+<?php
 
-            $sql = "update users set username = '$username' where id = $Id ";
-            $result = mysqli_query($conn , $sql);
+if (isset($_POST['update'])) {
+    $username = $_POST['username'];
 
-            echo "<script>
+    $sql = "update users set username = '$username' where id = $Id ";
+    $result = mysqli_query($conn, $sql);
+
+    echo "<script>
             
             alert('User Update Successfully!');
             window.location.href='user_show.php'
             </script>";
-        }
-        include("footer.php");
+}
+include("footer.php");
 
-    ?>
+?>

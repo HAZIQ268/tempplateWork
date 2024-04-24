@@ -59,7 +59,7 @@
 
 
 
-<?php
+    <?php
 
 if (isset($_POST['submit'])) {
     $categoryName =$_POST['categoryname'];
@@ -78,10 +78,11 @@ if (isset($_FILES)) {
     move_uploaded_file($file_tmp , "images/category/" .$file_name);
 }
 
-echo 
+            echo 
                 "<script>
                 alert('Your Category has been Added');
                 </script>";
 }
     include("footer.php");
-?>
+
+    ?>

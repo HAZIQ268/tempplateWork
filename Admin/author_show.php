@@ -6,22 +6,22 @@ include("connection.php");
 ?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
- <!--**********************************
+<!--**********************************
             Content body start
         ***********************************-->
-        < class="content-body">
+        <div class="content-body">
             <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4>Hi, welcome back!</h4>
-                            <p class="mb-0">Your business dashboard template</p>
+                            <span class="ml-1">Element</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Element</a></li>
                         </ol>
                     </div>
                 </div>
@@ -38,8 +38,10 @@ include("connection.php");
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Category Name</th>
-                                                <th>Category Image</th>
+                                                <th>Author Name</th>
+                                                <th>Date Of Birth</th>
+                                                <th>Location</th>
+                                                <th>Image</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -48,24 +50,26 @@ include("connection.php");
                                             <tr>
                                             <?php
 
-                                            $sql ="select * from category";
+                                            $sql ="select * from authors";
                                             $result=mysqli_query($conn,$sql);
 
                                             while ($rows=mysqli_fetch_assoc($result)) {
                                                 
                                                 ?>
                                                     <td><?php echo $rows['id'] ?></td>
-                                                    <td><?php echo $rows['CategoryName'] ?></td>
+                                                    <td><?php echo $rows['author_name'] ?></td>
+                                                    <td><?php echo $rows['dob'] ?></td>
+                                                    <td><?php echo $rows['location'] ?></td>
                                         
                                                 <?php
                                                       echo "<td>
-                                                      <img src=\"images/category/{$rows['CategoryImage']}\" height=100px
+                                                      <img src=\"images/author/{$rows['image']}\" height=100px
                                                       width=100px</td>
                                                       "
                                                 ?>
-                                                <td><a href="category_update.php?id=<?php echo $rows
+                                                <td><a href="author_update.php?id=<?php echo $rows
                                                     ['id']?>" class="text-primary"><i class="bi bi-pencil-square"></i>Edit</a></td>
-                                                    <td><a href="category_delete.php?id=<?php echo $rows
+                                                    <td><a href="author_delete.php?id=<?php echo $rows
                                                     ['id']?>" class="text-danger"><i class="bi bi-trash3-fill"></i>Delete</a></td>
                                                 </tr>
 
@@ -79,6 +83,7 @@ include("connection.php");
                     </div>
                 </div>
             </div>
+        
                                     
 
 

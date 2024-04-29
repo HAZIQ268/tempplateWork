@@ -199,15 +199,15 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Authors</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Authors Add</a></li>
-                            <li><a href="./index2.html">Authors Show</a></li>
+                            <li><a href="author_add.php">Authors Add</a></li>
+                            <li><a href="author_show.php">Authors Show</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Books</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Books Add</a></li>
-                            <li><a href="./index2.html">Books Show</a></li>
+                            <li><a href="book_add.php">Books Add</a></li>
+                            <li><a href="book_show.php">Books Show</a></li>
                         </ul>
                     </li>
     

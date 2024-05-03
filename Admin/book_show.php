@@ -3,6 +3,8 @@
     include("header.php");
     include("connection.php");
 
+    $sql="select books .*, authors.author_name,category.CategoryName from books inner join authors on books.AuthId_FK authors.id inner join category on books.CatId_FK = category.id";
+    $result=mysqli_query($conn,$sql);
 ?>
 
 
@@ -40,8 +42,12 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
+                                                <th>Book Name</th>
+                                                <th>Description</th>
+                                                <th>Price</th>
                                                 <th>Category Name</th>
-                                                <th>Category Image</th>
+                                                <th>Author Name</th>
+                                                <th>Book Image</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -51,23 +57,29 @@
 
                                             <?php
 
-                                                $sql = "select * from category";
+                                                $sql = "select * from books";
                                                 $result = mysqli_query($conn , $sql);
 
                                                 while($rows = mysqli_fetch_assoc($result)){
                                                     ?>
                                                     
                                                     <td><?php echo $rows['id'] ?></td>
+                                                    <td><?php echo $rows['BookName'] ?></td>
+                                                    <td><?php echo $rows['description'] ?></td>
+                                                    <td><?php echo $rows['Price'] ?></td>
                                                     <td><?php echo $rows['CategoryName'] ?></td>
+                                                    <td><?php echo $rows['author_name'] ?></td>
 
                                                     <?php 
-                                                    echo "<td><img src=\"images/category/{$rows['CategoryImage']}\"
+                                                    echo "<td><img src=\"images/books/{$rows['BookImage']}\"
                                                     height=100px width=100px</td>"
                                                     ?>
 
-                                                    <td><a href="category_update.php?id=<?php echo $rows['id']?>"
+                        
+
+                                                    <td><a href="book_update.php?id=<?php echo $rows['id']?>"
                                                     class="text-primary">Edit <i class="bi bi-pencil-square"></i></a></td>
-                                                    <td><a href="category_delete.php?id=<?php echo $rows['id']?>"
+                                                    <td><a href="book_delete.php?id=<?php echo $rows['id']?>"
                                                     class="text-danger">Delete <i class="bi bi-trash3-fill"></i></a></td>
 
 

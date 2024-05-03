@@ -3,7 +3,7 @@
     include("header.php");
     include("connection.php");
 
-    $sql="select books .*, authors.author_name,category.CategoryName from books inner join authors on books.AuthId_FK authors.id inner join category on books.CatId_FK = category.id";
+    $sql="select books .*,authors.author_name,category.CategoryName from books inner join authors on books.AuthId_FK = authors.id inner join category on books.CatId_FK = category.id";
     $result=mysqli_query($conn,$sql);
 ?>
 
@@ -65,7 +65,7 @@
                                                     
                                                     <td><?php echo $rows['id'] ?></td>
                                                     <td><?php echo $rows['BookName'] ?></td>
-                                                    <td><?php echo $rows['description'] ?></td>
+                                                    <td><?php echo $rows['Description'] ?></td>
                                                     <td><?php echo $rows['Price'] ?></td>
                                                     <td><?php echo $rows['CategoryName'] ?></td>
                                                     <td><?php echo $rows['author_name'] ?></td>

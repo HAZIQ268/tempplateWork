@@ -62,9 +62,11 @@ include("connection.php");
                                                     <td><?php echo $rows['location'] ?></td>
                                         
                                                 <?php
-                                                      echo "<td>
+                                                      echo "
+                                                      <td>
                                                       <img src=\"images/author/{$rows['image']}\" height=100px
-                                                      width=100px</td>
+                                                      width=100px
+                                                      </td>
                                                       "
                                                 ?>
                                                 <td><a href="author_update.php?id=<?php echo $rows

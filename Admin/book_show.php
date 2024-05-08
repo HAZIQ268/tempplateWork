@@ -57,9 +57,7 @@
 
                                             <?php
 
-                                                $sql = "select * from books";
-                                                $result = mysqli_query($conn , $sql);
-
+                                              
                                                 while($rows = mysqli_fetch_assoc($result)){
                                                     ?>
                                                     
@@ -71,8 +69,10 @@
                                                     <td><?php echo $rows['author_name'] ?></td>
 
                                                     <?php 
-                                                    echo "<td><img src=\"images/books/{$rows['BookImage']}\"
-                                                    height=100px width=100px</td>"
+                                                    echo "<td>
+                                                    <img src=\"images/books/{$rows['BookImage']}\"
+                                                    height=100px width=100px
+                                                    </td>"
                                                     ?>
 
                         

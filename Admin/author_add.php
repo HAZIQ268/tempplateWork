@@ -71,12 +71,13 @@
     <?php
     if (isset($_POST['submit'])) {
 
-    $authorName =$_POST['authorname'];
+    $authorname =$_POST['authorname'];
     $dob =$_POST['dob'];
     $location =$_POST['location'];
     $image =$_FILES['image']['name'];
 
-    $sql ="insert into authors (author_name,dob,location,image) values ('$authorName','$dob','$location','$image')";
+    $sql ="insert into authors (author_name,dob,location,image) values ('$authorname','$dob','$location','$image')";
+
     $result =mysqli_query($conn,$sql);
     
     if (isset($_FILES)) {

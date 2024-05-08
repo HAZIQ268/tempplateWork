@@ -37,15 +37,15 @@ $rows=mysqli_fetch_assoc($result);
                                     <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label>Author Name</label>
-                                                <input type="text"  value="<?php echo $rows['author_name'] ?> name="authorname" class="form-control" placeholder="Enter Your Category">
+                                                <input type="text"  value="<?php echo $rows['author_name'] ?>" name="authorname" class="form-control" placeholder="Enter Your Category">
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label>Date Of Birth</label>
-                                                <input type="date" value="<?php echo $rows['dob'] ?> name="dob" placeholder="Select Your Date Of Birth" class="form-control" >
+                                                <input type="date" value="<?php echo $rows['dob'] ?>" name="dob" placeholder="Select Your Date Of Birth" class="form-control" >
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label>Location</label>
-                                                <input type="text" value="<?php echo $rows['location'] ?> name="location"  class="form-control" >
+                                                <input type="text" value="<?php echo $rows['location'] ?>" name="location"  class="form-control" >
                                             </div>
                                             <div class="form-group col-md-12">
                                             <p><?php echo $rows['image'] ?></p>

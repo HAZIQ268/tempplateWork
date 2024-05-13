@@ -1,6 +1,7 @@
 <?php
 include("header.php");
 ?>
+
 	
                     <!-- Main -->
 					<div id="main">
@@ -90,7 +91,7 @@ include("header.php");
 								<article class="style1">
 									<span class="image">
                                     <?php 
-                                                    echo "<img src=\"../../Admin/images/authors/{$rows['image']}\"
+                                                    echo "<img src=\"../../Admin/images/author/{$rows['image']}\"
                                                     height=300px width=300px"
                                                     ?>
 										
@@ -100,6 +101,8 @@ include("header.php");
 										<h2><?php  echo $rows['author_name'] ?></h2>
 										<h2><?php  echo $rows['dob'] ?></h2>
 										<h2><?php  echo $rows['location'] ?></h2>
+										<h2><?php  echo $rows['image'] ?></h2>
+
 										
 										<p><del>$19.00</del> <strong>$19.00</strong></p>
 
@@ -168,7 +171,9 @@ include("header.php");
 						</div>
                     </div>
                 
-					</div>
+					
+					
+					
                     
 
 <?php

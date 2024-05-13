@@ -34,9 +34,10 @@ include("header.php");
 						<br>
 
 							<br>
-
+					<div class="container">
 							<h2 class="h2">Category Products</h2>
-
+							<br>
+						<br>
 							<!-- Products -->
 							<section class="tiles">
                             <?php
@@ -64,8 +65,8 @@ include("header.php");
                                 <?php } ?>
 								
 							</section>
-
-							
+					</div>
+							</div>
 							<br>
 							<br>
 
